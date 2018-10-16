@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataSources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../doc/DataSources.xsd">
+	<DataSource id="1" type="internal" name="cout-certificat-immatriculation" database="1">
+		<Description><![CDATA[Données de références pour le calcul du coût du cerficat d'immatriculation]]></Description>
+		<Table id="1" name="baremeDemarche" label="Barème par nature de démarche">
+			<Description><![CDATA[Barème applicable selon la nature de la démarche]]></Description>
+			<Column id="1" name="id" type="integer" label="id">
+				<Description><![CDATA[Identifiant interne]]></Description>
+			</Column>
+			<Column id="2" name="demarche" type="text" label="Démarche">
+				<Description><![CDATA[Libellé de la démarche]]></Description>
+			</Column>
+			<Column id="3" name="baremeMotoMoins125" type="number" label="Barème moto (2 ou 3 roues) de moins de 125cm3">
+				<Description><![CDATA[Barème applicable à une moto (2 ou 3 roues) de moins de 125cm3 pour cette démarche]]></Description>
+			</Column>
+			<Column id="4" name="baremeAutre" type="number" label="Barème autre véhicule">
+				<Description><![CDATA[Barème applicable aux autres types de véhicule pour cette démarche]]></Description>
+			</Column>
+		</Table>
+		<Table id="2" name="baremeVehicule" label="Barème par type de véhicule">
+			<Description><![CDATA[Barème applicable selon le type de véhicule]]></Description>
+			<Column id="1" name="id" type="integer" label="id">
+				<Description><![CDATA[Identifiant interne]]></Description>
+			</Column>
+			<Column id="2" name="typeVehicule" type="text" label="Type de véhicule">
+				<Description><![CDATA[Type de véhicule]]></Description>
+			</Column>
+			<Column id="3" name="baremeMoins10" type="number" label="Barème véhicule neuf ou moins de 10 ans">
+				<Description><![CDATA[Barème applicable à un véhicule neuf ou de moins de 10 ans]]></Description>
+			</Column>
+			<Column id="4" name="baremePlus10" type="number" label="Barème véhicule de plus de 10 ans">
+				<Description><![CDATA[Barème applicable à un véhicule de plus de 10 ans]]></Description>
+			</Column>
+			<Column id="5" name="taxeFPTransport" type="money" label="Taxe formation professionnelle dans les transports">
+				<Description><![CDATA[Y2 - Taxe en euros sur la formation professionnelle dans les transports en fonction du PTAC]]></Description>
+			</Column>
+		</Table>
+		<Table id="3" name="malusCV" label="Montants du malus selon la puissance fiscale">
+			<Description><![CDATA[Montants du malus selon la puissance fiscale du véhicule et l'année d'achat]]></Description>
+			<Column id="1" name="id" type="integer" label="id">
+				<Description><![CDATA[Identifiant interne]]></Description>
+			</Column>
+			<Column id="2" name="annee" type="year" label="Année d'achat du véhicule">
+				<Description><![CDATA[Année d'achat du véhicule]]></Description>
+			</Column>
+			<Column id="3" name="minCV" type="integer" label="Borne inférieure du nombre de CV">
+				<Description><![CDATA[Borne inférieure du nombre de CV fiscaux]]></Description>
+			</Column>
+			<Column id="4" name="maxCV" type="integer" label="Borne supérieure du nombre de CV">
+				<Description><![CDATA[Borne supérieure du nombre de CV fiscaux]]></Description>
+			</Column>
+			<Column id="5" name="malus" type="money" label="Montant du malus">
+				<Description><![CDATA[Montant du malus en euros]]></Description>
+			</Column>
+		</Table>
+		<Table id="4" name="malusCO2" label="Montants du malus selon le taux d'émission de CO2 par kilomètre">
+			<Description><![CDATA[Montants du malus en fonction du nombre de grammes de CO2 émis par kilomètre et l'année d'achat]]></Description>
+			<Column id="1" name="id" type="integer" label="id">
+				<Description><![CDATA[Identifiant interne]]></Description>
+			</Column>
+			<Column id="2" name="annee" type="year" label="Année d'achat du véhicule">
+				<Description><![CDATA[Année d'achat du véhicule]]></Description>
+			</Column>
+			<Column id="3" name="minCO2" type="integer" label="Borne inférieure du taux d'émission de CO2">
+				<Description><![CDATA[Borne inférieure du nombre de grammes de CO2 émis par kilomètre]]></Description>
+			</Column>
+			<Column id="4" name="maxCO2" type="integer" label="Borne supérieure du taux d'émission de CO2">
+				<Description><![CDATA[Borne supérieure du nombre de grammes de CO2 émis par kilomètre]]></Description>
+			</Column>
+			<Column id="5" name="malus" type="money" label="Montant du malus">
+				<Description><![CDATA[Montant du malus en euros]]></Description>
+			</Column>
+		</Table>
+		<Table id="5" name="taxeAdditionnelleCO2" label="Taxe additionnelle CO2">
+			<Description><![CDATA[Taxe additionnelle CO2 en fonction du nombre de grammes de CO2 émis par kilomètre et l'année d'achat pour les véhicules ayant fait l'objet d'une réception communautaire]]></Description>
+			<Column id="1" name="id" type="integer" label="id">
+				<Description><![CDATA[Identifiant interne]]></Description>
+			</Column>
+			<Column id="2" name="annee" type="year" label="Année d'achat du véhicule">
+				<Description><![CDATA[Année d'achat du véhicule]]></Description>
+			</Column>
+			<Column id="3" name="tranche" type="integer" label="Tranche du barême taxe additionnelle CO2">
+				<Description><![CDATA[Tranche du barême taxe additionnelle CO2]]></Description>
+			</Column>
+			<Column id="4" name="minCO2" type="integer" label="Borne inférieure du taux d'émission de CO2">
+				<Description><![CDATA[Borne inférieure du nombre de grammes de CO2 émis par kilomètre]]></Description>
+			</Column>
+			<Column id="5" name="maxCO2" type="integer" label="Borne supérieure du taux d'émission de CO2">
+				<Description><![CDATA[Borne supérieure du nombre de grammes de CO2 émis par kilomètre]]></Description>
+			</Column>
+			<Column id="6" name="taxeParGramme" type="money" label="Montant en euros de la taxe par gramme de CO2">
+				<Description><![CDATA[Montant en euros de la taxe par gramme de CO2 émis par kilomètre]]></Description>
+			</Column>
+		</Table>
+		<Table id="6" name="taxeAdditionnelleCV" label="Taxe additionnelle selon la puissance fiscale">
+			<Description><![CDATA[Taxe additionnelle en fonction de la puissance fiscale et l'année d'achat pour les véhicules n'ayant pas fait l'objet d'une réception communautaire]]></Description>
+			<Column id="1" name="id" type="integer" label="id">
+				<Description><![CDATA[Identifiant interne]]></Description>
+			</Column>
+			<Column id="2" name="annee" type="year" label="Année d'achat du véhicule">
+				<Description><![CDATA[Année d'achat du véhicule]]></Description>
+			</Column>
+			<Column id="3" name="minCV" type="integer" label="Borne inférieure du nombre de CV">
+				<Description><![CDATA[Borne inférieure du nombre de CV fiscaux]]></Description>
+			</Column>
+			<Column id="4" name="maxCV" type="integer" label="Borne supérieure du nombre de CV">
+				<Description><![CDATA[Borne supérieure du nombre de CV fiscaux]]></Description>
+			</Column>
+			<Column id="5" name="taxe" type="money" label="Montant en euros de la taxe">
+				<Description><![CDATA[Montant en euros de la taxe]]></Description>
+			</Column>
+		</Table>
+		<Table id="7" name="taxeRegionale" label="Taxe régionale">
+			<Description><![CDATA[Y1 - Taxe régionale pour 1 CV fiscal]]></Description>
+			<Column id="1" name="id" type="integer" label="id">
+				<Description><![CDATA[Identifiant interne]]></Description>
+			</Column>
+			<Column id="2" name="regionId" type="choice" label="Région">
+				<Description><![CDATA[Identifiant de la région dans la table des régions]]></Description>
+				<Choices>
+					<Source id="1" datasource="cout-certificat-immatriculation" request="select * from regions order by name" returnType="assocArray" valueColumn="codeRegion" labelColumn="name"></Source>
+				</Choices>
+			</Column>
+			<Column id="3" name="taxe" type="money" label="Montant en euros de la taxe régionale">
+				<Description><![CDATA[Montant en euros de la taxe pour 1 CV fiscal]]></Description>
+			</Column>
+			<Column id="4" name="exoVehiculePropre" type="percent" label="Pourcentage exonération véhicules propres">
+				<Description><![CDATA[Pourcentage d’exonération de la taxe régionale pour les véhicules propres]]></Description>
+			</Column>
+		</Table>
+		<Table id="8" name="regions" label="Régions">
+			<Description><![CDATA[Régions]]></Description>
+			<Column id="1" name="id" type="integer" label="id">
+				<Description><![CDATA[Identifiant interne]]></Description>
+			</Column>
+			<Column id="2" name="codeRegion" type="integer" label="Code région">
+				<Description><![CDATA[Code de la région]]></Description>
+			</Column>
+			<Column id="3" name="name" type="text" label="Nom de la région">
+				<Description><![CDATA[Nom de la région]]></Description>
+			</Column>
+		</Table>
+		<Table id="9" name="departements" label="Départements">
+			<Description><![CDATA[Départements]]></Description>
+			<Column id="1" name="id" type="integer" label="id">
+				<Description><![CDATA[Identifiant interne]]></Description>
+			</Column>
+			<Column id="2" name="codeDep" type="department" label="Code du département">
+				<Description><![CDATA[Code du département]]></Description>
+			</Column>
+			<Column id="3" name="name" type="text" label="Nom du département">
+				<Description><![CDATA[Nom du département]]></Description>
+			</Column>
+			<Column id="4" name="regionId" type="choice" label="Région">
+				<Description><![CDATA[Identifiant de la région d'appartenance dans la table des régions]]></Description>
+				<Choices>
+					<Source id="1" datasource="cout-certificat-immatriculation" request="select * from regions order by name" returnType="assocArray" valueColumn="codeRegion" labelColumn="name"></Source>
+				</Choices>
+			</Column>
+		</Table>
+		<Table id="10" name="energies" label="Catégories énergétiques">
+			<Description><![CDATA[Catégories énergétiques]]></Description>
+			<Column id="1" name="id" type="integer" label="id">
+				<Description><![CDATA[Identifiant interne]]></Description>
+			</Column>
+			<Column id="2" name="energie" type="text" label="Energie">
+				<Description><![CDATA[Libellé énergie]]></Description>
+			</Column>
+			<Column id="3" name="pourcentMalusCO2" type="percent" label="Pourcentage sur le taux CO2">
+				<Description><![CDATA[Pourcentage sur le taux CO2]]></Description>
+			</Column>
+			<Column id="4" name="pourcentTaxeAdditionnelle" type="percent" label="Pourcentage de la taxe additionnelle">
+				<Description><![CDATA[Pourcentage de la taxe additionnelle]]></Description>
+			</Column>
+			<Column id="5" name="energiePropre" type="boolean" label="Energie propre ?">
+				<Description><![CDATA[Energie propre permettant une exonération totale ou partielle de la taxe régionale]]></Description>
+			</Column>
+		</Table>
+		<Table id="11" name="prelevementadditionnel" label="prelevementadditionnel">
+			<Description><![CDATA[<p>Prélèvement additionnel grosse cylindrée</p>]]></Description>
+			<Column id="1" name="id" type="integer" label="id">
+				<Description><![CDATA[Identifiant interne]]></Description>
+			</Column>
+			<Column id="2" name="annee" type="year" label="Année de la démarche">
+				<Description><![CDATA[]]></Description>
+			</Column>
+			<Column id="3" name="borneinf" type="integer" label="borne inférieure">
+				<Description><![CDATA[]]></Description>
+			</Column>
+			<Column id="4" name="bornesup" type="integer" label="borne supérieure">
+				<Description><![CDATA[]]></Description>
+			</Column>
+			<Column id="5" name="montantCV" type="money" label="montant par CV">
+				<Description><![CDATA[]]></Description>
+			</Column>
+		</Table>
+	</DataSource>
+	<Databases>
+		<Database id="1" type="mysqli" name="cout-certificat-immatriculation" label="Données de références pour le calcul du coût du cerficat d'immatriculation" host="127.0.0.1" port="" user="root"></Database>
+	</Databases>
+</DataSources>
